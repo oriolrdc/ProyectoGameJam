@@ -34,6 +34,8 @@ public class PlayerControler : MonoBehaviour
 
     //Interact
     private InputAction _interactAction;
+    float interactRange = 2;
+    [SerializeField] private LayerMask _InteractLayer;
 
     void Awake()
     {
@@ -59,6 +61,11 @@ public class PlayerControler : MonoBehaviour
         }
 
         Gravity();
+
+        if(_interactAction.WasPressedThisFrame())
+        {
+            Interact();
+        }
     }
 
     void Movement()
@@ -107,5 +114,26 @@ public class PlayerControler : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_sensorPosition.position, _sensorRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, interactRange);
+    }
+
+    void Interact()
+    {
+        Collider [] interactableObjects = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in interactableObjects)
+        {
+            if(collider.gameObject.tag == "Interactable")
+            {
+                InteractableObject script = collider.GetComponent<InteractableObject>();
+                script.Interact();
+            }
+        }
+    }
+
+    public bool CanInteract()
+    {
+        return Physics.CheckSphere(transform.position, interactRange, _InteractLayer);
     }
 }
