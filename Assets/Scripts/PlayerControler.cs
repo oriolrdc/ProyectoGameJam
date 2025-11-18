@@ -5,6 +5,7 @@ public class PlayerControler : MonoBehaviour
 {
     //Components
     private CharacterController _controller;
+    private CapsuleCollider _collider;
     //Camera
     private Transform _mainCamera;
     private InputAction _lookAction;
@@ -32,8 +33,7 @@ public class PlayerControler : MonoBehaviour
     private float _gravity = -9.81f;
 
     //Interact
-    [SerializeField] private Transform _interactSensor;
-    [SerializeField] private float _interactRadius = 2;
+    private InputAction _interactAction;
 
     void Awake()
     {
@@ -41,7 +41,9 @@ public class PlayerControler : MonoBehaviour
         _moveAction = InputSystem.actions["Move"];
         _lookAction = InputSystem.actions["Look"];
         _jumpAction = InputSystem.actions["Jump"];
+        _interactAction = InputSystem.actions["Interact"];
         _mainCamera = Camera.main.transform;
+        _collider = GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -105,21 +107,5 @@ public class PlayerControler : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_sensorPosition.position, _sensorRadius);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(_interactSensor.position, _interactRadius);
-    }
-
-    void Interact()
-    {
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 5))
-        {
-            IInteractable interactable = hit.transform.GetComponent<IInteractable>();
-            if(interactable != null)
-            {
-                interactable.Interact();
-            }
-        }
     }
 }

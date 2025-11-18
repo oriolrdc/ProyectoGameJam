@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour, IInteractable
 {
-    public void Interact()
+    public void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("HAs Interactuado");
+        if(collider.gameObject.tag == "Player")
+        {
+            GameManager.Instance.Interact();
+        }
     }
 }
