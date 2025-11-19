@@ -31,7 +31,7 @@ public class PlayerControler : MonoBehaviour
     float interactRange = 2;
     [SerializeField] private LayerMask _InteractLayer;
     //Jenga
-    private bool _isJenga;
+    [SerializeField] private bool _taken = false;
 
     void Awake()
     {
@@ -41,6 +41,11 @@ public class PlayerControler : MonoBehaviour
         _jumpAction = InputSystem.actions["Jump"];
         _interactAction = InputSystem.actions["Interact"];
         _mainCamera = Camera.main.transform;
+    }
+
+    void Start()
+    {
+        _taken = false;
     }
 
     void Update()
@@ -57,7 +62,7 @@ public class PlayerControler : MonoBehaviour
 
         Gravity();
 
-        if(_interactAction.WasPressedThisFrame() || _interactAction.WasCompletedThisFrame() && _isJenga)
+        if(_interactAction.WasPressedThisFrame())
         {
             Interact();
         }
@@ -120,6 +125,18 @@ public class PlayerControler : MonoBehaviour
             {
                 InteractableObject script = collider.GetComponent<InteractableObject>();
                 script.Interact();
+            }
+            
+            if(collider.gameObject.tag == "JengaActive" && _taken == false)
+            {
+                Jenga script = collider.GetComponent<Jenga>();
+                script.ToggleJenga(false);
+                _taken = true;
+            }
+            else if(collider.gameObject.tag == "JengaInActive" && _taken == true)
+            {
+                Jenga script = collider.GetComponent<Jenga>();
+                script.ToggleJenga(true);
             }
         }
     }

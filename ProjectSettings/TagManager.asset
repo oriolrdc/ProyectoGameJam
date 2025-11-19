@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Interactable
   - ECircle
+  - JengaInActive
+  - JengaActive
   layers:
   - Default
   - TransparentFX
