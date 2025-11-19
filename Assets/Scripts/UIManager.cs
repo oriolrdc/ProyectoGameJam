@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator TextVelocity(string text)
     {
+        _subtitlesText.text = " ";
         string texto = text;
         char[] letras = texto.ToCharArray();
         foreach (char letra in letras)

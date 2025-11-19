@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63420478}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.5244965, z: -0, w: 0.85141265}
+  m_LocalRotation: {x: 0, y: -0.5244965, z: -0, w: 0.85141265}
   m_LocalPosition: {x: -1.278, y: 1.157, z: -0.092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -276,7 +276,7 @@ Transform:
   - {fileID: 978343724}
   - {fileID: 1022538098}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -63.269, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &80664762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2718499320136858391, guid: cb9f64ea7295d3e47a09327e80e5053c, type: 3}
@@ -378,7 +378,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.79
+      value: -8.594
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -386,11 +386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.077
+      value: 25.565
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5116937
+      value: 0.20585102
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -398,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.85916793
+      value: 0.9785834
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -410,7 +410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 118.447
+      value: 156.241
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 994fb629fd9a62c44a2bda63f8de879b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -677,8 +677,8 @@ PlayableDirector:
   m_GameObject: {fileID: 759409520}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: e99c3e0545526dd48b54868fcddca02c, type: 2}
-  m_InitialState: 0
+  m_PlayableAsset: {fileID: 11400000, guid: 9e077f40d4434b347839b8594f965116, type: 2}
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -695,6 +695,10 @@ PlayableDirector:
     value: {fileID: 1641715099}
   - key: {fileID: 6651434884967815496, guid: e99c3e0545526dd48b54868fcddca02c, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -334076043798685484, guid: 9e077f40d4434b347839b8594f965116, type: 2}
+    value: {fileID: 63420479}
+  - key: {fileID: -2689734890941020179, guid: 9e077f40d4434b347839b8594f965116, type: 2}
+    value: {fileID: 1641715099}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &759409522
@@ -1025,6 +1029,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3671391032871747026, guid: cb9f64ea7295d3e47a09327e80e5053c, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 4700549556857610682, guid: cb9f64ea7295d3e47a09327e80e5053c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.726
@@ -1088,6 +1096,10 @@ PrefabInstance:
     - target: {fileID: 7167079338126368340, guid: cb9f64ea7295d3e47a09327e80e5053c, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167079338126368340, guid: cb9f64ea7295d3e47a09327e80e5053c, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[0]'
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7287443446496485715, guid: cb9f64ea7295d3e47a09327e80e5053c, type: 3}
       propertyPath: m_Layer
@@ -1671,7 +1683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1855,19 +1867,37 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 97dfbd961b0fb7b479d400205f0da115, type: 2}
     - {fileID: 11400000, guid: 15c0fc3cf11c1a54d969fd8001b741b1, type: 2}
+    - {fileID: 11400000, guid: c74fc49426b499a4b8d59c835b38e940, type: 2}
+    - {fileID: 11400000, guid: d3b6628afc1753a48b831a197e96d2a0, type: 2}
+    - {fileID: 11400000, guid: bf2815b194e0b0941b3bb1c93b5dda55, type: 2}
+    - {fileID: 11400000, guid: 511a209a18aaec1479c64f1ff20cdf01, type: 2}
     m_Events:
     - m_PersistentCalls:
+        m_Calls: []
+    - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1641715100}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: ChangeScene
+        - m_Target: {fileID: 1914822673}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: WriteText
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Scene2
+            m_StringArgument: Fua que juapo esta jugar con el trenecito
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1641715100}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: CinematicFinished
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
@@ -1881,8 +1911,50 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Desimaru cabron comeme el cojon
+            m_StringArgument: Nos vamos a casa vente pa qui ya, tonto
             m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1914822673}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: WriteText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "Nos vemos ma\xF1ana cuando vuelvas"
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1914822673}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: WriteText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1641715100}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: CinematicFinished
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!114 &1641715100
 MonoBehaviour:
@@ -1898,6 +1970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loadingCanvas: {fileID: 686765058}
   _playerInputs: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
+  _TimelineCompleted: 0
 --- !u!4 &1641715101
 Transform:
   m_ObjectHideFlags: 0
@@ -2089,8 +2162,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.97, y: 1.13, z: 1.24}
-  m_Center: {x: -0.11, y: -0.65, z: -0.4600347}
+  m_Size: {x: 0.97, y: 1.83, z: 1.68}
+  m_Center: {x: -0.11, y: -0.77, z: -0.4600347}
 --- !u!64 &1764389061
 MeshCollider:
   m_ObjectHideFlags: 0

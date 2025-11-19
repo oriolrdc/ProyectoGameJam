@@ -1,12 +1,18 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     [SerializeField] private BoxCollider _trigger;
-    
+
     public void Interact()
     {
-        TimeLineDirector.Instance.PlayTimeline();
+        GameManager.Instance.ChangeScene("Scene2");
+    }
+
+    public void InteractCinematic(PlayableAsset timeline)
+    {
+        TimeLineDirector.Instance.PlayTimeline(timeline);
     }
 
     void Start()

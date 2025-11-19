@@ -7,7 +7,7 @@ public class TimeLineDirector : MonoBehaviour
     public static TimeLineDirector Instance {get ; private set;}
 
     private PlayableDirector _timelineDirector;
-    [SerializeField] private InputActionAsset _playerInputs;
+    public InputActionAsset _playerInputs;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -23,9 +23,9 @@ public class TimeLineDirector : MonoBehaviour
         _timelineDirector = GetComponent<PlayableDirector>();
     }
 
-    public void PlayTimeline()
+    public void PlayTimeline(PlayableAsset timeline)
     {
         _playerInputs.FindActionMap("Player").Disable();
-        _timelineDirector.Play();
+        _timelineDirector.Play(timeline);
     }
 }

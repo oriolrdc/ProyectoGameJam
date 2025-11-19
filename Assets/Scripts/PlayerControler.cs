@@ -46,6 +46,8 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         _taken = false;
+        GameManager.Instance._playerInputs.FindActionMap("Player").Disable();
+        GameManager.Instance._playerInputs.FindActionMap("UI").Disable();
     }
 
     void Update()
@@ -53,7 +55,10 @@ public class PlayerControler : MonoBehaviour
         _moveInputs = _moveAction.ReadValue<Vector2>();
         _lookInput = _lookAction.ReadValue<Vector2>();
 
-        Movement();
+        if(GameManager.Instance._TimelineCompleted)
+        {
+            Movement();
+        }
 
         if(_jumpAction.WasPressedThisFrame() && IsGrounded())
         {

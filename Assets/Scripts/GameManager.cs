@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {get ; private set;}
 
     [SerializeField] private GameObject _loadingCanvas;
-    [SerializeField] private InputActionAsset _playerInputs;
+    public InputActionAsset _playerInputs;
+    public bool _TimelineCompleted;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -21,8 +22,9 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        
+
         DontDestroyOnLoad(gameObject);
+        
     }
 
     public void ChangeScene(string sceneName)
@@ -55,5 +57,10 @@ public class GameManager : MonoBehaviour
         }
         _loadingCanvas.SetActive(false);
         _playerInputs.FindActionMap("Player").Enable();
+    }
+
+    public void CinematicFinished(bool state)
+    {
+        _TimelineCompleted = state;
     }
 }
