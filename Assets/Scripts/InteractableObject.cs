@@ -4,10 +4,11 @@ using UnityEngine.Playables;
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     [SerializeField] private BoxCollider _trigger;
+    [SerializeField] private string _scene;
 
     public void Interact()
     {
-        GameManager.Instance.ChangeScene("Scene2");
+        GameManager.Instance.ChangeScene(_scene);
     }
 
     public void InteractCinematic(PlayableAsset timeline)

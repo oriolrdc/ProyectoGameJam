@@ -2199,6 +2199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 1764389058}
+  _scene: Room2
 --- !u!1 &1824260234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5336449482237408737, guid: cb9f64ea7295d3e47a09327e80e5053c, type: 3}
