@@ -5,7 +5,6 @@ public class PlayerControler : MonoBehaviour
 {
     //Components
     private CharacterController _controller;
-    private CapsuleCollider _collider;
     //Camera
     private Transform _mainCamera;
     private InputAction _lookAction;
@@ -13,29 +12,26 @@ public class PlayerControler : MonoBehaviour
     float xRotation;
     [SerializeField] private float _cameraSens = 10;
     [SerializeField] private Transform _lookAtCamera;
-
     //Movement
     private InputAction _moveAction;
     private Vector2 _moveInputs;
     private float _movementSpeed = 5;
-
     //Jump;
     private InputAction _jumpAction;
     [SerializeField] private float _jumpHeight = 2;
-
     //GorundSensor
     [SerializeField] private Transform _sensorPosition;
     [SerializeField] private float _sensorRadius = 0.5f;
     [SerializeField] private LayerMask _groundLayer;
-
     //Gravity
     private Vector3 _playerGravity;
     private float _gravity = -9.81f;
-
     //Interact
     private InputAction _interactAction;
     float interactRange = 2;
     [SerializeField] private LayerMask _InteractLayer;
+    //Jenga
+    private bool _isJenga;
 
     void Awake()
     {
@@ -45,7 +41,6 @@ public class PlayerControler : MonoBehaviour
         _jumpAction = InputSystem.actions["Jump"];
         _interactAction = InputSystem.actions["Interact"];
         _mainCamera = Camera.main.transform;
-        _collider = GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -62,7 +57,7 @@ public class PlayerControler : MonoBehaviour
 
         Gravity();
 
-        if(_interactAction.WasPressedThisFrame())
+        if(_interactAction.WasPressedThisFrame() || _interactAction.WasCompletedThisFrame() && _isJenga)
         {
             Interact();
         }
@@ -114,9 +109,6 @@ public class PlayerControler : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_sensorPosition.position, _sensorRadius);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, interactRange);
     }
 
     void Interact()
@@ -132,8 +124,8 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public bool CanInteract()
+    /*public bool CanInteract()
     {
         return Physics.CheckSphere(transform.position, interactRange, _InteractLayer);
-    }
+    }*/
 }
