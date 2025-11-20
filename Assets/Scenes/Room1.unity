@@ -2017,6 +2017,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d3b6628afc1753a48b831a197e96d2a0, type: 2}
     - {fileID: 11400000, guid: bf2815b194e0b0941b3bb1c93b5dda55, type: 2}
     - {fileID: 11400000, guid: 511a209a18aaec1479c64f1ff20cdf01, type: 2}
+    - {fileID: 11400000, guid: f8d013bbcbc27a140b5e252a941dcfe2, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls: []
@@ -2031,7 +2032,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Fua que juapo esta jugar con el trenecito
+            m_StringArgument: 'Jose: El tren es muy divertido!'
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 759409522}
@@ -2057,7 +2058,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Nos vamos a casa vente pa qui ya, tonto
+            m_StringArgument: 'Mama: Hijo, ya es tarde, baja que nos vamos ya.'
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
@@ -2071,7 +2072,8 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: "Nos vemos ma\xF1ana cuando vuelvas"
+            m_StringArgument: "Jose: Me lo he pasado muy bien, ya seguiremos jugando
+              ma\xF1ana."
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
@@ -2101,6 +2103,20 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1914822673}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: WriteText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "Tu: Siii ha sido muy divertido, \xA1hasta ma\xF1ana!."
+            m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &1641715100
 MonoBehaviour:
@@ -2793,7 +2809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2012596419
 Transform:
   m_ObjectHideFlags: 0

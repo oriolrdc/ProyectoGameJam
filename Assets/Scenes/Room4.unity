@@ -1655,6 +1655,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 600aa4069db220e438dd558dee229d11, type: 2}
     - {fileID: 11400000, guid: 0d7a595ad4331854ba63c81271a0a1ff, type: 2}
     - {fileID: 11400000, guid: 97dfbd961b0fb7b479d400205f0da115, type: 2}
+    - {fileID: 11400000, guid: 0949d614d4b9de74c92dcb0fe9e23790, type: 2}
+    - {fileID: 11400000, guid: c74fc49426b499a4b8d59c835b38e940, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1724,6 +1726,34 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Room5
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1939176183}
+          m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
+          m_MethodName: Pensamiento3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1939176183}
+          m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
+          m_MethodName: DialogoVacio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!320 &1939176182

@@ -920,7 +920,7 @@ PlayableDirector:
   m_GameObject: {fileID: 564158577}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 5952466b6c90db44db3a3fa4aec15975, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 9ec7af45991ae7647ab7dc71b33bb240, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -960,6 +960,8 @@ PlayableDirector:
     value: {fileID: 564158581}
   - key: {fileID: -6654404720945075037, guid: 5952466b6c90db44db3a3fa4aec15975, type: 2}
     value: {fileID: 564158581}
+  - key: {fileID: -4174329437987129506, guid: 5952466b6c90db44db3a3fa4aec15975, type: 2}
+    value: {fileID: 907263155}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &564158579
@@ -1013,6 +1015,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 511a209a18aaec1479c64f1ff20cdf01, type: 2}
     - {fileID: 11400000, guid: 600aa4069db220e438dd558dee229d11, type: 2}
     - {fileID: 11400000, guid: 0d7a595ad4331854ba63c81271a0a1ff, type: 2}
+    - {fileID: 11400000, guid: 15c0fc3cf11c1a54d969fd8001b741b1, type: 2}
+    - {fileID: 11400000, guid: c74fc49426b499a4b8d59c835b38e940, type: 2}
+    - {fileID: 11400000, guid: d3b6628afc1753a48b831a197e96d2a0, type: 2}
+    - {fileID: 11400000, guid: f8d013bbcbc27a140b5e252a941dcfe2, type: 2}
+    - {fileID: 11400000, guid: 77ff562f6b7f35b4082153e7bb641be5, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1061,6 +1068,76 @@ MonoBehaviour:
         - m_Target: {fileID: 564158579}
           m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
           m_MethodName: ECircle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 564158579}
+          m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
+          m_MethodName: Dialogo1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 564158579}
+          m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
+          m_MethodName: DialogoVacio
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 564158579}
+          m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
+          m_MethodName: Pensamiento1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 564158579}
+          m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
+          m_MethodName: Dialogo2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 564158579}
+          m_TargetAssemblyTypeName: TimeLineDirector, Assembly-CSharp
+          m_MethodName: Pensamiento2
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2317,7 +2394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1757419510
 Transform:
   m_ObjectHideFlags: 0
