@@ -30,8 +30,10 @@ public class PlayerControler : MonoBehaviour
     private InputAction _interactAction;
     float interactRange = 2;
     [SerializeField] private LayerMask _InteractLayer;
+    public bool _talked = false;
     //Jenga
     [SerializeField] private bool _taken = false;
+    [SerializeField] private TimeLineDirector _timelineDirector;
 
     void Awake()
     {
@@ -46,6 +48,7 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         _taken = false;
+        _talked = false;
         GameManager.Instance._playerInputs.FindActionMap("Player").Disable();
         GameManager.Instance._playerInputs.FindActionMap("UI").Disable();
     }
@@ -55,7 +58,7 @@ public class PlayerControler : MonoBehaviour
         _moveInputs = _moveAction.ReadValue<Vector2>();
         _lookInput = _lookAction.ReadValue<Vector2>();
 
-        if(GameManager.Instance._TimelineCompleted)
+        if(_timelineDirector._TimelineCompleted == true)
         {
             Movement();
         }
@@ -131,17 +134,36 @@ public class PlayerControler : MonoBehaviour
                 InteractableObject script = collider.GetComponent<InteractableObject>();
                 script.Interact();
             }
+            else if(collider.gameObject.tag == "InteractableCinematic")
+            {
+                InteractableObject script = collider.GetComponent<InteractableObject>();
+                script.InteractCinematic();
+            }
             
-            if(collider.gameObject.tag == "JengaActive" && _taken == false)
+            if(collider.gameObject.tag == "JengaActive" && _taken == false && _talked == true)
             {
                 Jenga script = collider.GetComponent<Jenga>();
                 script.ToggleJenga(false);
                 _taken = true;
             }
-            else if(collider.gameObject.tag == "JengaInActive" && _taken == true)
+            else if(collider.gameObject.tag == "JengaInActive" && _taken == true && _talked == true)
             {
                 Jenga script = collider.GetComponent<Jenga>();
                 script.ToggleJenga(true);
+            }
+
+            if(collider.gameObject.tag == "Kid" && _talked == false)
+            {
+                _talked = true;
+                InteractableObject script = collider.GetComponent<InteractableObject>();
+                script.InteractCinematic();
+                
+            }
+
+            if(collider.gameObject.tag == "Chest" && _talked == true)
+            {
+                Chest script = collider.GetComponent<Chest>();
+                script.ChestAnimation();
             }
         }
     }

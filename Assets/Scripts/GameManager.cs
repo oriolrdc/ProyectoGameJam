@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _loadingCanvas;
     public InputActionAsset _playerInputs;
-    public bool _TimelineCompleted;
+    
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
-        
+        DontDestroyOnLoad(gameObject);  
     }
 
     public void ChangeScene(string sceneName)
@@ -37,7 +36,7 @@ public class GameManager : MonoBehaviour
         yield return null;
 
         _loadingCanvas.SetActive(true);
-
+    
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
 
@@ -57,10 +56,5 @@ public class GameManager : MonoBehaviour
         }
         _loadingCanvas.SetActive(false);
         _playerInputs.FindActionMap("Player").Enable();
-    }
-
-    public void CinematicFinished(bool state)
-    {
-        _TimelineCompleted = state;
     }
 }

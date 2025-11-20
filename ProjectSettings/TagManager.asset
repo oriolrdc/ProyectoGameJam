@@ -8,6 +8,11 @@ TagManager:
   - JengaInActive
   - JengaActive
   - Interactable
+  - InteractableCinematic
+  - Kid
+  - EnterToChange
+  - Cama
+  - Tienda
   layers:
   - Default
   - TransparentFX

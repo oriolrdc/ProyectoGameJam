@@ -4,28 +4,45 @@ using UnityEngine.InputSystem;
 
 public class TimeLineDirector : MonoBehaviour
 {
-    public static TimeLineDirector Instance {get ; private set;}
-
-    private PlayableDirector _timelineDirector;
+    [SerializeField] private PlayableDirector _timelineDirector;
     public InputActionAsset _playerInputs;
-    void Awake()
+    [SerializeField] private PlayableAsset timeline;
+    [SerializeField] private PlayableAsset timeline1;
+    public bool _TimelineCompleted = true;
+    public bool _jengaPlayed = false;
+
+    void Start()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
-        
-        DontDestroyOnLoad(gameObject);
-        _timelineDirector = GetComponent<PlayableDirector>();
+        _jengaPlayed = false;
     }
 
-    public void PlayTimeline(PlayableAsset timeline)
+    public void PlayTimeline()
     {
-        _playerInputs.FindActionMap("Player").Disable();
         _timelineDirector.Play(timeline);
+    }
+
+    public void PlayTimeline1()
+    {
+        _timelineDirector.Play(timeline1);
+    }
+
+    public void CinematicFinished(bool state)
+    {
+        _TimelineCompleted = state;
+    }
+
+    public void JengaPlayed()
+    {
+        _jengaPlayed = true;
+    }
+
+    public void ChangeScene(string room)
+    {
+        GameManager.Instance.ChangeScene(room);
+    }
+
+    public void ECircle()
+    {
+        UIManager.Instance.Hide();
     }
 }

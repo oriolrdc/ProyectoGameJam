@@ -5,15 +5,16 @@ public class InteractableObject : MonoBehaviour, IInteractable
 {
     [SerializeField] private BoxCollider _trigger;
     [SerializeField] private string _scene;
+    [SerializeField] private TimeLineDirector _timelineDirector;
 
     public void Interact()
     {
         GameManager.Instance.ChangeScene(_scene);
     }
 
-    public void InteractCinematic(PlayableAsset timeline)
+    public void InteractCinematic()
     {
-        TimeLineDirector.Instance.PlayTimeline(timeline);
+        _timelineDirector.PlayTimeline();
     }
 
     void Start()
@@ -30,4 +31,6 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         UIManager.Instance.Hide();
     }
+
+    
 }
